@@ -1,0 +1,42 @@
+{
+  "name": "pg-manager-ui-prototype",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Clickable UI/UX prototype of PG Manager with sample data. No backend.",
+  "scripts": {
+    "dev": "vite --port 5180",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview --port 5181",
+    "typecheck": "tsc -b --noEmit",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^1.59.0",
+    "radix-ui": "^1.8.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router": "^7.9.0",
+    "sonner": "^2.0.8",
+    "tailwind-merge": "^3.7.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/node": "^22.18.0",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "eslint": "^10.13.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "globals": "^17.13.0",
+    "prettier": "^3.6.0",
+    "tailwindcss": "^4.3.3",
+    "typescript": "~5.9.2",
+    "typescript-eslint": "^8.44.0",
+    "vite": "^7.1.0"
+  }
+}

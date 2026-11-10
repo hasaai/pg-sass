@@ -1,0 +1,687 @@
+{
+ "application-approve POST": [
+  "owner",
+  "manager"
+ ],
+ "application-decline POST": [
+  "owner",
+  "manager"
+ ],
+ "application-detail GET": [
+  "owner",
+  "manager"
+ ],
+ "application-list GET": [
+  "owner",
+  "manager"
+ ],
+ "audit-log-list GET": [
+  "owner"
+ ],
+ "bed-archive POST": [
+  "owner",
+  "manager"
+ ],
+ "bed-detail DELETE": [
+  "owner",
+  "manager"
+ ],
+ "bed-detail GET": [
+  "owner",
+  "manager",
+  "accountant",
+  "staff"
+ ],
+ "bed-detail PATCH": [
+  "owner",
+  "manager"
+ ],
+ "bed-detail PUT": [],
+ "bed-list GET": [
+  "owner",
+  "manager",
+  "accountant",
+  "staff"
+ ],
+ "bed-list POST": [
+  "owner",
+  "manager"
+ ],
+ "bed-restore POST": [
+  "owner",
+  "manager"
+ ],
+ "complaint-detail DELETE": [
+  "owner",
+  "manager"
+ ],
+ "complaint-detail GET": [
+  "owner",
+  "manager",
+  "staff"
+ ],
+ "complaint-detail PATCH": [
+  "owner",
+  "manager",
+  "staff"
+ ],
+ "complaint-detail PUT": [],
+ "complaint-list GET": [
+  "owner",
+  "manager",
+  "staff"
+ ],
+ "complaint-list POST": [
+  "owner",
+  "manager",
+  "staff"
+ ],
+ "employee-detail DELETE": [
+  "owner",
+  "manager",
+  "accountant"
+ ],
+ "employee-detail GET": [
+  "owner",
+  "manager",
+  "accountant"
+ ],
+ "employee-detail PATCH": [
+  "owner",
+  "manager",
+  "accountant"
+ ],
+ "employee-detail PUT": [],
+ "employee-list GET": [
+  "owner",
+  "manager",
+  "accountant"
+ ],
+ "employee-list POST": [
+  "owner",
+  "manager",
+  "accountant"
+ ],
+ "employee-pay POST": [
+  "owner",
+  "manager",
+  "accountant"
+ ],
+ "enquiry-detail GET": [
+  "owner",
+  "manager"
+ ],
+ "enquiry-detail PATCH": [
+  "owner",
+  "manager"
+ ],
+ "enquiry-detail PUT": [],
+ "enquiry-list GET": [
+  "owner",
+  "manager"
+ ],
+ "expense-detail DELETE": [
+  "owner",
+  "manager",
+  "accountant"
+ ],
+ "expense-detail GET": [
+  "owner",
+  "manager",
+  "accountant"
+ ],
+ "expense-detail PATCH": [
+  "owner",
+  "manager",
+  "accountant"
+ ],
+ "expense-detail PUT": [],
+ "expense-list GET": [
+  "owner",
+  "manager",
+  "accountant"
+ ],
+ "expense-list POST": [
+  "owner",
+  "manager",
+  "accountant"
+ ],
+ "floor-archive POST": [
+  "owner",
+  "manager"
+ ],
+ "floor-detail DELETE": [
+  "owner",
+  "manager"
+ ],
+ "floor-detail GET": [
+  "owner",
+  "manager",
+  "accountant",
+  "staff"
+ ],
+ "floor-detail PATCH": [
+  "owner",
+  "manager"
+ ],
+ "floor-detail PUT": [],
+ "floor-list GET": [
+  "owner",
+  "manager",
+  "accountant",
+  "staff"
+ ],
+ "floor-list POST": [
+  "owner",
+  "manager"
+ ],
+ "floor-restore POST": [
+  "owner",
+  "manager"
+ ],
+ "invoice-charges POST": [
+  "owner",
+  "manager",
+  "accountant"
+ ],
+ "invoice-detail GET": [
+  "owner",
+  "manager",
+  "accountant"
+ ],
+ "invoice-generate POST": [
+  "owner",
+  "manager",
+  "accountant"
+ ],
+ "invoice-list GET": [
+  "owner",
+  "manager",
+  "accountant"
+ ],
+ "invoice-void POST": [
+  "owner",
+  "manager",
+  "accountant"
+ ],
+ "listing-detail DELETE": [
+  "owner",
+  "manager"
+ ],
+ "listing-detail GET": [
+  "owner",
+  "manager"
+ ],
+ "listing-detail PATCH": [
+  "owner",
+  "manager"
+ ],
+ "listing-detail PUT": [],
+ "listing-list GET": [
+  "owner",
+  "manager"
+ ],
+ "listing-list POST": [
+  "owner",
+  "manager"
+ ],
+ "listing-photo-detail DELETE": [
+  "owner",
+  "manager"
+ ],
+ "listing-photo-detail PATCH": [
+  "owner",
+  "manager"
+ ],
+ "listing-photo-detail PUT": [],
+ "listing-photos GET": [
+  "owner",
+  "manager"
+ ],
+ "listing-photos POST": [
+  "owner",
+  "manager"
+ ],
+ "member-access-choices GET": [
+  "owner",
+  "manager"
+ ],
+ "member-detail DELETE": [
+  "owner"
+ ],
+ "member-detail GET": [
+  "owner",
+  "manager"
+ ],
+ "member-detail PATCH": [
+  "owner"
+ ],
+ "member-list GET": [
+  "owner",
+  "manager"
+ ],
+ "member-list POST": [
+  "owner"
+ ],
+ "my-plan GET": [
+  "owner",
+  "manager",
+  "accountant",
+  "staff"
+ ],
+ "notice-detail DELETE": [
+  "owner",
+  "manager"
+ ],
+ "notice-detail GET": [
+  "owner",
+  "manager",
+  "accountant",
+  "staff"
+ ],
+ "notice-detail PATCH": [
+  "owner",
+  "manager"
+ ],
+ "notice-detail PUT": [],
+ "notice-list GET": [
+  "owner",
+  "manager",
+  "accountant",
+  "staff"
+ ],
+ "notice-list POST": [
+  "owner",
+  "manager"
+ ],
+ "organization-current GET": [
+  "owner",
+  "manager",
+  "accountant",
+  "staff"
+ ],
+ "organization-current PATCH": [
+  "owner"
+ ],
+ "organization-current-logo DELETE": [
+  "owner"
+ ],
+ "organization-current-logo POST": [
+  "owner"
+ ],
+ "owner-check GET": [
+  "owner"
+ ],
+ "owner-check PATCH": [
+  "owner"
+ ],
+ "owner-check-document DELETE": [
+  "owner"
+ ],
+ "owner-check-document-download GET": [
+  "owner"
+ ],
+ "owner-check-documents POST": [
+  "owner"
+ ],
+ "owner-check-submit POST": [
+  "owner"
+ ],
+ "payment-detail GET": [
+  "owner",
+  "manager",
+  "accountant"
+ ],
+ "payment-list GET": [
+  "owner",
+  "manager",
+  "accountant"
+ ],
+ "payment-list POST": [
+  "owner",
+  "manager",
+  "accountant"
+ ],
+ "plan-checkout POST": [
+  "owner"
+ ],
+ "plan-choices GET": [
+  "owner",
+  "manager",
+  "accountant",
+  "staff"
+ ],
+ "plan-confirm POST": [
+  "owner"
+ ],
+ "plan-gateways GET": [
+  "owner",
+  "manager",
+  "accountant",
+  "staff"
+ ],
+ "plan-payments GET": [
+  "owner",
+  "manager",
+  "accountant"
+ ],
+ "property-activate POST": [
+  "owner",
+  "manager"
+ ],
+ "property-amenities GET": [
+  "owner",
+  "manager",
+  "accountant",
+  "staff"
+ ],
+ "property-amenities PUT": [
+  "owner",
+  "manager"
+ ],
+ "property-archive POST": [
+  "owner",
+  "manager"
+ ],
+ "property-bulk POST": [
+  "owner",
+  "manager"
+ ],
+ "property-deactivate POST": [
+  "owner",
+  "manager"
+ ],
+ "property-detail DELETE": [
+  "owner",
+  "manager"
+ ],
+ "property-detail GET": [
+  "owner",
+  "manager",
+  "accountant",
+  "staff"
+ ],
+ "property-detail PATCH": [
+  "owner",
+  "manager"
+ ],
+ "property-detail PUT": [],
+ "property-document-detail DELETE": [
+  "owner",
+  "manager"
+ ],
+ "property-document-detail PATCH": [
+  "owner",
+  "manager"
+ ],
+ "property-document-detail PUT": [],
+ "property-document-download GET": [
+  "owner",
+  "manager"
+ ],
+ "property-documents GET": [
+  "owner",
+  "manager"
+ ],
+ "property-documents POST": [
+  "owner",
+  "manager"
+ ],
+ "property-inventory GET": [
+  "owner",
+  "manager",
+  "accountant",
+  "staff"
+ ],
+ "property-list GET": [
+  "owner",
+  "manager",
+  "accountant",
+  "staff"
+ ],
+ "property-list POST": [
+  "owner",
+  "manager"
+ ],
+ "property-logo DELETE": [
+  "owner",
+  "manager"
+ ],
+ "property-logo POST": [
+  "owner",
+  "manager"
+ ],
+ "property-photo-detail DELETE": [
+  "owner",
+  "manager"
+ ],
+ "property-photo-detail PATCH": [
+  "owner",
+  "manager"
+ ],
+ "property-photo-detail PUT": [],
+ "property-photos POST": [
+  "owner",
+  "manager"
+ ],
+ "property-readiness GET": [
+  "owner",
+  "manager",
+  "accountant",
+  "staff"
+ ],
+ "property-restore POST": [
+  "owner",
+  "manager"
+ ],
+ "property-rooms-import POST": [
+  "owner",
+  "manager"
+ ],
+ "property-rooms-import-template GET": [
+  "owner",
+  "manager"
+ ],
+ "property-submit-verification POST": [
+  "owner",
+  "manager"
+ ],
+ "property-verification GET": [
+  "owner",
+  "manager",
+  "accountant",
+  "staff"
+ ],
+ "reminders-due GET": [
+  "owner",
+  "manager",
+  "accountant"
+ ],
+ "reminders-email POST": [
+  "owner",
+  "manager",
+  "accountant"
+ ],
+ "reminders-log POST": [
+  "owner",
+  "manager",
+  "accountant"
+ ],
+ "report-collections GET": [
+  "owner",
+  "manager",
+  "accountant"
+ ],
+ "report-dashboard GET": [
+  "owner",
+  "manager",
+  "accountant",
+  "staff"
+ ],
+ "report-finance GET": [
+  "owner",
+  "manager",
+  "accountant"
+ ],
+ "report-monthly GET": [
+  "owner",
+  "manager",
+  "accountant"
+ ],
+ "room-archive POST": [
+  "owner",
+  "manager"
+ ],
+ "room-detail DELETE": [
+  "owner",
+  "manager"
+ ],
+ "room-detail GET": [
+  "owner",
+  "manager",
+  "accountant",
+  "staff"
+ ],
+ "room-detail PATCH": [
+  "owner",
+  "manager"
+ ],
+ "room-detail PUT": [],
+ "room-feature-choices GET": [
+  "owner",
+  "manager",
+  "accountant",
+  "staff"
+ ],
+ "room-list GET": [
+  "owner",
+  "manager",
+  "accountant",
+  "staff"
+ ],
+ "room-list POST": [
+  "owner",
+  "manager"
+ ],
+ "room-restore POST": [
+  "owner",
+  "manager"
+ ],
+ "stay-agreement GET": [
+  "owner",
+  "manager"
+ ],
+ "stay-agreement POST": [
+  "owner",
+  "manager"
+ ],
+ "stay-checkout POST": [
+  "owner",
+  "manager"
+ ],
+ "stay-deposit POST": [
+  "owner",
+  "manager",
+  "accountant"
+ ],
+ "stay-detail GET": [
+  "owner",
+  "manager",
+  "accountant",
+  "staff"
+ ],
+ "stay-free-places GET": [
+  "owner",
+  "manager"
+ ],
+ "stay-list GET": [
+  "owner",
+  "manager",
+  "accountant",
+  "staff"
+ ],
+ "stay-list POST": [
+  "owner",
+  "manager"
+ ],
+ "stay-notice POST": [
+  "owner",
+  "manager"
+ ],
+ "stay-terms POST": [
+  "owner",
+  "manager"
+ ],
+ "stay-transfer POST": [
+  "owner",
+  "manager"
+ ],
+ "stay-withdraw-notice POST": [
+  "owner",
+  "manager"
+ ],
+ "tenant-detail DELETE": [
+  "owner",
+  "manager"
+ ],
+ "tenant-detail GET": [
+  "owner",
+  "manager",
+  "accountant",
+  "staff"
+ ],
+ "tenant-detail PATCH": [
+  "owner",
+  "manager"
+ ],
+ "tenant-detail PUT": [],
+ "tenant-list GET": [
+  "owner",
+  "manager",
+  "accountant",
+  "staff"
+ ],
+ "tenant-list POST": [
+  "owner",
+  "manager"
+ ],
+ "tenant-summary GET": [
+  "owner",
+  "manager",
+  "accountant",
+  "staff"
+ ],
+ "unit-archive POST": [
+  "owner",
+  "manager"
+ ],
+ "unit-detail DELETE": [
+  "owner",
+  "manager"
+ ],
+ "unit-detail GET": [
+  "owner",
+  "manager",
+  "accountant",
+  "staff"
+ ],
+ "unit-detail PATCH": [
+  "owner",
+  "manager"
+ ],
+ "unit-detail PUT": [],
+ "unit-list GET": [
+  "owner",
+  "manager",
+  "accountant",
+  "staff"
+ ],
+ "unit-list POST": [
+  "owner",
+  "manager"
+ ],
+ "unit-restore POST": [
+  "owner",
+  "manager"
+ ]
+}

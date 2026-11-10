@@ -1,0 +1,65 @@
+name: backend
+
+on:
+  pull_request:
+    paths: ["backend/**", ".github/workflows/backend.yml"]
+  push:
+    branches: [main]
+    paths: ["backend/**", ".github/workflows/backend.yml"]
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    name: checks (${{ matrix.db }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        db: [sqlite, postgres]
+    defaults:
+      run:
+        working-directory: backend
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: pgsaas
+          POSTGRES_PASSWORD: pgsaas
+          POSTGRES_DB: pgsaas
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U pgsaas"
+          --health-interval 5s --health-timeout 5s --health-retries 10
+    env:
+      DB_ENGINE: ${{ matrix.db }}
+      POSTGRES_HOST: localhost
+      POSTGRES_PASSWORD: pgsaas
+      DJANGO_SETTINGS_MODULE: config.settings.test
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+      - run: uv sync --locked --python 3.12
+      - name: Lint and format
+        run: |
+          uv run ruff check .
+          uv run ruff format --check .
+      - name: Type check
+        run: uv run mypy .
+      - name: Migrations are in sync
+        run: uv run python manage.py makemigrations --check --dry-run
+      - name: OpenAPI schema is valid and committed
+        run: |
+          uv run python manage.py spectacular --validate --fail-on-warn --file openapi.yml
+          git diff --exit-code openapi.yml
+      - name: Tests
+        run: uv run pytest --create-db --cov --cov-fail-under=85
+      - name: Production settings pass deploy checks
+        env:
+          DB_ENGINE: postgres
+          DJANGO_SETTINGS_MODULE: config.settings.production
+          DJANGO_SECRET_KEY: ci-only-check-deploy-key-not-used-anywhere-else-0123456789
+        run: uv run python manage.py check --deploy --fail-level WARNING

@@ -1,0 +1,168 @@
+/*
+ * Layer order: Tailwind's reset (base) first, then the older hand-written styles (legacy),
+ * then components and utilities. So the new screens' utility classes always win, and the
+ * screens not yet moved to the new design keep working.
+ */
+@layer theme, base, legacy, components, utilities;
+
+@import 'tailwindcss/theme.css' layer(theme);
+@import 'tailwindcss/preflight.css' layer(base);
+@import './styles.css' layer(legacy);
+@import 'tailwindcss/utilities.css' layer(utilities);
+
+@custom-variant data-open (&[data-state='open']);
+
+/*
+ * PG Manager design system. One palette, one type scale, one set of radii, shadows and motion.
+ * Brand: deep jade (calm, money). Neutrals: cool slate with a faint jade bias. Status colours
+ * (emerald / amber / red / sky) are separate from the brand and used only for state.
+ */
+@theme {
+  --font-sans:
+    'Geist', 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', sans-serif;
+  --font-mono: 'Geist Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+
+  --color-background: oklch(0.982 0.003 190);
+  --color-foreground: oklch(0.205 0.018 230);
+  --color-card: oklch(1 0 0);
+  --color-card-foreground: oklch(0.205 0.018 230);
+  --color-popover: oklch(1 0 0);
+  --color-popover-foreground: oklch(0.205 0.018 230);
+  --color-primary: oklch(0.47 0.095 178);
+  --color-primary-hover: oklch(0.42 0.09 178);
+  --color-primary-foreground: oklch(0.995 0 0);
+  --color-primary-soft: oklch(0.955 0.03 175);
+  --color-secondary: oklch(0.962 0.005 220);
+  --color-secondary-foreground: oklch(0.26 0.02 230);
+  --color-muted: oklch(0.962 0.005 220);
+  --color-muted-foreground: oklch(0.52 0.018 235);
+  --color-subtle-foreground: oklch(0.64 0.014 235);
+  --color-accent: oklch(0.955 0.03 175);
+  --color-accent-foreground: oklch(0.36 0.08 178);
+  --color-destructive: oklch(0.55 0.2 25);
+  --color-destructive-foreground: oklch(0.99 0 0);
+  --color-success: oklch(0.58 0.13 158);
+  --color-warning: oklch(0.72 0.15 72);
+  --color-border: oklch(0.918 0.006 225);
+  --color-border-strong: oklch(0.86 0.009 225);
+  --color-input: oklch(0.875 0.009 225);
+  --color-ring: oklch(0.55 0.1 178);
+  --color-sidebar: oklch(0.973 0.004 200);
+  --color-sidebar-active: oklch(1 0 0);
+  --color-ink: oklch(0.21 0.02 230);
+
+  --radius-sm: 0.3125rem;
+  --radius-md: 0.4375rem;
+  --radius-lg: 0.625rem;
+  --radius-xl: 0.875rem;
+  --radius-2xl: 1.125rem;
+
+  --shadow-xs: 0 1px 2px 0 rgb(15 23 32 / 0.05);
+  --shadow-sm: 0 1px 2px 0 rgb(15 23 32 / 0.04), 0 1px 3px 0 rgb(15 23 32 / 0.06);
+  --shadow-md: 0 2px 4px -1px rgb(15 23 32 / 0.05), 0 6px 16px -4px rgb(15 23 32 / 0.08);
+  --shadow-lg: 0 8px 24px -6px rgb(15 23 32 / 0.12), 0 2px 6px -2px rgb(15 23 32 / 0.06);
+  --shadow-xl: 0 24px 48px -12px rgb(15 23 32 / 0.22);
+
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+  --animate-in: fade-in 160ms var(--ease-out-soft);
+  --animate-pop: pop-in 180ms var(--ease-out-soft);
+  --animate-slide-in: slide-in 240ms var(--ease-out-soft);
+  --animate-shimmer: shimmer 1.4s linear infinite;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(3px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes pop-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -48%) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+@keyframes slide-in {
+  from {
+    transform: translateX(24px);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+@keyframes shimmer {
+  from {
+    background-position: -200% 0;
+  }
+  to {
+    background-position: 200% 0;
+  }
+}
+
+@layer components {
+  /* Chevron for native selects (an arbitrary bg-[url()] class is not generated reliably). */
+  .select-arrow:not(.no-arrow) {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='%236b7380' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' viewBox='0 0 24 24'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    background-position: right 0.6rem center;
+    background-repeat: no-repeat;
+  }
+}
+
+@layer base {
+  html {
+    color-scheme: light;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    font-feature-settings: 'ss01', 'cv11';
+    text-rendering: optimizeLegibility;
+  }
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+    letter-spacing: -0.011em;
+  }
+  ::selection {
+    background: var(--color-primary-soft);
+    color: var(--color-accent-foreground);
+  }
+  :focus-visible {
+    outline-color: var(--color-ring);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    ::before,
+    ::after {
+      animation-duration: 1ms !important;
+      transition-duration: 1ms !important;
+    }
+  }
+  *,
+  ::before,
+  ::after {
+    border-color: var(--color-border);
+  }
+  /* Grid items may shrink below their content (long names, tables): no sideways page scroll. */
+  :where(.grid) > * {
+    min-width: 0;
+  }
+  /* Keep lists readable in the older screens (the reset removes bullets). */
+  .legacy ul:not([class]),
+  .legacy ol:not([class]) {
+    padding-left: 1.25rem;
+    list-style: disc;
+  }
+}

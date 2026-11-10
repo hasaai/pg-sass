@@ -1,0 +1,63 @@
+# Development and test tools. Install with: pip install -r requirements-dev.txt
+-r requirements.txt
+asgiref==3.12.1
+    # via django
+colorama==0.4.6 ; sys_platform == 'win32'
+    # via pytest
+coverage==7.16.2
+    # via pytest-cov
+django==5.2.18
+    # via
+    #   django-stubs
+    #   django-stubs-ext
+django-stubs==5.2.9
+    # via djangorestframework-stubs
+django-stubs-ext==6.1.2
+    # via django-stubs
+djangorestframework-stubs==3.16.9
+factory-boy==3.3.3
+faker==40.43.0
+    # via factory-boy
+iniconfig==2.3.1
+    # via pytest
+librt==0.16.0 ; platform_python_implementation != 'PyPy'
+    # via mypy
+mypy==1.19.1
+    # via
+    #   django-stubs
+    #   djangorestframework-stubs
+mypy-extensions==1.1.0
+    # via mypy
+packaging==26.3
+    # via pytest
+pathspec==1.1.1
+    # via mypy
+pluggy==1.7.0
+    # via
+    #   pytest
+    #   pytest-cov
+pygments==2.21.0
+    # via pytest
+pytest==8.4.2
+    # via
+    #   pytest-cov
+    #   pytest-django
+pytest-cov==6.3.0
+pytest-django==4.14.0
+ruff==0.12.12
+sqlparse==0.6.0
+    # via django
+types-pyyaml==6.0.12.20260906
+    # via
+    #   django-stubs
+    #   djangorestframework-stubs
+typing-extensions==4.16.0
+    # via
+    #   django-stubs
+    #   django-stubs-ext
+    #   djangorestframework-stubs
+    #   mypy
+tzdata==2026.5 ; sys_platform == 'win32'
+    # via
+    #   django
+    #   faker

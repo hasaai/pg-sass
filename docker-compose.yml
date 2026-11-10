@@ -1,0 +1,22 @@
+# Optional: PostgreSQL for local development (the default is SQLite).
+# Start with `docker compose up -d db`, then set DB_ENGINE=postgres in backend/.env.
+# Redis, Celery and Mailpit join in later phases.
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: pgsaas
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-pgsaas}
+      POSTGRES_DB: pgsaas
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U pgsaas"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  pgdata:

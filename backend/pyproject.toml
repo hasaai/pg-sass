@@ -1,0 +1,70 @@
+[project]
+name = "pg-saas-backend"
+version = "0.1.0"
+description = "PG and co-living management SaaS: Django REST API"
+requires-python = ">=3.12"
+dependencies = [
+    # Web framework (LTS release, supported until April 2028).
+    "django>=5.2,<5.3",
+    # REST API layer.
+    "djangorestframework>=3.16,<3.17",
+    # JWT access/refresh tokens for the PWA (stateless API auth).
+    "djangorestframework-simplejwt>=5.5,<6",
+    # OpenAPI schema; the frontend generates its TypeScript types from it.
+    "drf-spectacular>=0.28,<0.29",
+    # PostgreSQL driver.
+    "psycopg[binary]>=3.2,<4",
+    # Verifies uploaded listing photos are real images (ImageField).
+    "pillow>=11,<13",
+    # Encrypts SMS gateway API keys typed in the platform portal (Fernet). Approved by San.
+    "cryptography>=44,<47",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3,<9",
+    "pytest-django>=4.11,<5",
+    "pytest-cov>=6,<7",
+    "factory-boy>=3.3,<4",
+    "ruff>=0.12,<0.13",
+    "mypy>=1.16,<2",
+    "django-stubs[compatible-mypy]>=5.2,<5.3",
+    "djangorestframework-stubs[compatible-mypy]>=3.16,<3.17",
+]
+
+[tool.uv]
+package = false
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+extend-exclude = ["*/migrations/*"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "DJ", "S", "SIM", "RUF"]
+ignore = ["RUF012"]
+
+[tool.ruff.lint.per-file-ignores]
+"**/tests/**" = ["S101", "S105", "S106"]
+"config/settings/*" = ["F403", "F405"]
+
+[tool.mypy]
+python_version = "3.12"
+plugins = ["mypy_django_plugin.main", "mypy_drf_plugin.main"]
+strict_optional = true
+warn_unused_ignores = true
+check_untyped_defs = true
+ignore_missing_imports = true
+exclude = ["migrations/"]
+
+[tool.django-stubs]
+django_settings_module = "config.settings.test"
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "config.settings.test"
+python_files = ["test_*.py"]
+addopts = "--reuse-db -q"
+
+[tool.coverage.run]
+source = ["core", "apps"]
+omit = ["*/migrations/*", "*/tests/*"]

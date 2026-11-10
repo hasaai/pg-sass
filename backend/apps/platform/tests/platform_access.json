@@ -1,0 +1,162 @@
+{
+ "platform-activity GET": [
+  "platform_owner",
+  "finance_admin",
+  "support_agent",
+  "verification_reviewer"
+ ],
+ "platform-amenity-detail PATCH": [
+  "platform_owner"
+ ],
+ "platform-amenity-detail PUT": [
+  "platform_owner"
+ ],
+ "platform-amenity-list GET": [
+  "platform_owner"
+ ],
+ "platform-document-download GET": [
+  "platform_owner",
+  "verification_reviewer"
+ ],
+ "platform-gateway-detail PATCH": [
+  "platform_owner",
+  "finance_admin"
+ ],
+ "platform-gateway-detail PUT": [
+  "platform_owner",
+  "finance_admin"
+ ],
+ "platform-gateway-list GET": [
+  "platform_owner",
+  "finance_admin"
+ ],
+ "platform-organization-detail GET": [
+  "platform_owner",
+  "finance_admin",
+  "support_agent",
+  "verification_reviewer"
+ ],
+ "platform-organization-features PUT": [
+  "platform_owner",
+  "support_agent"
+ ],
+ "platform-organization-list GET": [
+  "platform_owner",
+  "finance_admin",
+  "support_agent",
+  "verification_reviewer"
+ ],
+ "platform-organization-reactivate POST": [
+  "platform_owner"
+ ],
+ "platform-organization-suspend POST": [
+  "platform_owner"
+ ],
+ "platform-overview GET": [
+  "platform_owner",
+  "finance_admin",
+  "support_agent",
+  "verification_reviewer"
+ ],
+ "platform-payment-list GET": [
+  "platform_owner",
+  "finance_admin"
+ ],
+ "platform-plan-catalog GET": [
+  "platform_owner",
+  "finance_admin"
+ ],
+ "platform-plan-detail DELETE": [
+  "platform_owner",
+  "finance_admin"
+ ],
+ "platform-plan-detail GET": [
+  "platform_owner",
+  "finance_admin"
+ ],
+ "platform-plan-detail PATCH": [
+  "platform_owner",
+  "finance_admin"
+ ],
+ "platform-plan-detail PUT": [],
+ "platform-plan-list GET": [
+  "platform_owner",
+  "finance_admin"
+ ],
+ "platform-plan-list POST": [
+  "platform_owner",
+  "finance_admin"
+ ],
+ "platform-property-detail GET": [
+  "platform_owner",
+  "finance_admin",
+  "support_agent",
+  "verification_reviewer"
+ ],
+ "platform-property-list GET": [
+  "platform_owner",
+  "finance_admin",
+  "support_agent",
+  "verification_reviewer"
+ ],
+ "platform-property-verification POST": [
+  "platform_owner",
+  "verification_reviewer"
+ ],
+ "platform-sms-gateway-detail PATCH": [
+  "platform_owner"
+ ],
+ "platform-sms-gateway-detail PUT": [
+  "platform_owner"
+ ],
+ "platform-sms-gateway-list GET": [
+  "platform_owner"
+ ],
+ "platform-sms-gateway-test POST": [
+  "platform_owner"
+ ],
+ "platform-sms-log-list GET": [
+  "platform_owner"
+ ],
+ "platform-staff-access-choices GET": [
+  "platform_owner"
+ ],
+ "platform-staff-detail DELETE": [
+  "platform_owner"
+ ],
+ "platform-staff-detail GET": [
+  "platform_owner"
+ ],
+ "platform-staff-detail PATCH": [
+  "platform_owner"
+ ],
+ "platform-staff-history GET": [
+  "platform_owner"
+ ],
+ "platform-staff-list GET": [
+  "platform_owner"
+ ],
+ "platform-staff-list POST": [
+  "platform_owner"
+ ],
+ "platform-subscription GET": [
+  "platform_owner",
+  "finance_admin",
+  "support_agent",
+  "verification_reviewer"
+ ],
+ "platform-subscription PUT": [
+  "platform_owner",
+  "finance_admin"
+ ],
+ "platform-user-deactivate POST": [
+  "platform_owner"
+ ],
+ "platform-user-list GET": [
+  "platform_owner",
+  "support_agent"
+ ],
+ "platform-user-reactivate POST": [
+  "platform_owner"
+ ]
+}

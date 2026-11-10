@@ -1,0 +1,12 @@
+{
+  "name": "PG Manager",
+  "short_name": "PG Manager",
+  "description": "Manage PG properties, tenants and rent.",
+  "start_url": "/app",
+  "display": "standalone",
+  "background_color": "#f8fafc",
+  "theme_color": "#0f766e",
+  "icons": [
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
